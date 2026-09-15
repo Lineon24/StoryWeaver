@@ -45,3 +45,10 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+
+# Local generation, validation, and presentation artifacts
+/.codex-build/
+/.codex-finalizer/
+/.presentation-build/
+/output/
+/tmp/

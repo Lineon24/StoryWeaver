@@ -241,9 +241,10 @@ button { cursor: pointer; }
   min-width: 0;
   height: calc(100vh - 72px);
   min-height: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   flex-direction: column;
-  padding: 30px clamp(24px, 4vw, 58px) clamp(250px, 25vh, 280px);
+  padding: 30px clamp(24px, 4vw, 58px) 24px;
   background: #ffffff;
 }
 .scene-navigation {
@@ -338,7 +339,7 @@ button { cursor: pointer; }
 .generating-veil span { margin-top: 7px; color: #697588; font-size: 13px; }
 .fate-spinner { display: grid; width: 54px; height: 54px; place-items: center; color: #a96512; border: 1px solid #d9b77e; border-radius: 50%; background: #fff8ea; box-shadow: 0 0 0 8px #fff8ea; animation: weave 1.8s ease-in-out infinite; }
 @keyframes weave { 50% { transform: rotate(8deg) scale(1.08); box-shadow: 0 0 0 14px rgb(255 248 234 / 40%); } }
-.prompt-dock { position: absolute; right: clamp(24px, 5vw, 72px); bottom: 24px; left: clamp(24px, 5vw, 72px); display: flex; align-items: stretch; flex-direction: column; gap: 10px; padding: 14px; border: 1px solid #cfd6df; border-radius: 16px; background: rgb(255 255 255 / 97%); box-shadow: 0 12px 32px rgb(23 32 51 / 14%); backdrop-filter: blur(14px); }
+.prompt-dock { position: static; display: flex; flex: 0 0 auto; align-items: stretch; flex-direction: column; gap: 10px; margin-top: 16px; padding: 14px; border: 1px solid #cfd6df; border-radius: 16px; background: rgb(255 255 255 / 97%); box-shadow: 0 8px 24px rgb(23 32 51 / 10%); }
 .prompt-dock:focus-within { border-color: #ad711f; box-shadow: 0 0 0 3px rgb(169 101 18 / 10%), 0 12px 32px rgb(23 32 51 / 12%); }
 .prompt-dock-header, .prompt-dock-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .prompt-dock-header > div { display: flex; align-items: center; gap: 7px; color: #8f530a; }
@@ -472,7 +473,7 @@ button { cursor: pointer; }
   .sidebar-toggle { display: none; }
   .mobile-icon { display: grid; }
   .generate-button span { display: none; }
-  .scene-stage { height: auto; min-height: calc(100vh - 72px); overflow: visible; padding: 26px 17px 252px; }
+  .scene-stage { height: auto; min-height: calc(100vh - 72px); overflow: visible; padding: 26px 17px 24px; }
   .scene-navigation { align-items: stretch; flex-direction: column; gap: 10px; }
   .scene-actions { width: 100%; }
   .scene-actions button { flex: 1; }
@@ -480,7 +481,7 @@ button { cursor: pointer; }
   .scene-statuses { display: none; }
   .scene-input-grid { grid-template-columns: 1fr; }
   .scene-input-grid label:last-child { grid-column: auto; }
-  .prompt-dock { position: fixed; right: 17px; bottom: 18px; left: 17px; padding: 12px; }
+  .prompt-dock { margin-top: 14px; padding: 12px; }
   .prompt-dock textarea { min-height: 110px; max-height: 180px; resize: none; }
   .prompt-dock-footer { justify-content: flex-end; }
   .prompt-dock-footer > span { display: none; }

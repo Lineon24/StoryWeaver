@@ -3,7 +3,8 @@ import { createAgent, createMiddleware, modelRetryMiddleware, tool } from "langc
 import { z } from "zod";
 import type { Character, Fate, SceneResult, StoryProject, ToolTrace } from "@/lib/story-types";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
+export const maxDuration = 300;
 
 const CharacterSchema = z.object({
   id: z.string(),

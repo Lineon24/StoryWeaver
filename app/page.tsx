@@ -671,7 +671,16 @@ export default function Home() {
             })),
         }),
       });
-      const data = await response.json() as SceneResult & { error?: string };
+      const responseBody = await response.text();
+      let data: SceneResult & { error?: string };
+      try {
+        data = JSON.parse(responseBody) as SceneResult & { error?: string };
+      } catch {
+        const message = response.status === 504
+          ? "장면 생성 시간이 초과되었습니다. 잠시 후 다시 시도해주세요."
+          : `장면 생성 서버가 올바르지 않은 응답을 반환했습니다. (${response.status})`;
+        throw new Error(message);
+      }
       if (!response.ok) throw new Error(data.error || "장면을 생성하지 못했습니다.");
       updateActiveScene({ generated: true, result: data });
       setProject((current) => {

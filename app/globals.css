@@ -306,11 +306,14 @@ button { cursor: pointer; }
 .participant-row [data-state="checked"] { color: #ffffff; border-color: #a96512; background: #a96512; }
 .script-paper {
   position: relative;
-  flex: 1 1 auto;
-  min-height: 260px;
+  flex: 0 0 auto;
+  width: 100%;
+  height: clamp(320px, 46vh, 620px);
+  min-height: 180px;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
+  resize: vertical;
   padding: clamp(28px, 4vw, 48px);
   color: #344054;
   border: 1px solid #d9dfe7;
@@ -485,7 +488,7 @@ button { cursor: pointer; }
   .prompt-dock textarea { min-height: 110px; max-height: 180px; resize: none; }
   .prompt-dock-footer { justify-content: flex-end; }
   .prompt-dock-footer > span { display: none; }
-  .script-paper { min-height: 430px; overflow-y: visible; padding: 26px 21px; }
+  .script-paper { height: auto; min-height: 430px; overflow-y: visible; padding: 26px 21px; resize: none; }
   .dialogue-line blockquote { font-size: 20px; }
   .form-grid, .detail-grid { grid-template-columns: 1fr; }
   .relationship-state-grid { grid-template-columns: 1fr; }
